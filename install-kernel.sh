@@ -33,3 +33,5 @@ make olddefconfig
 make bindeb-pkg -j$(nproc)
 
 dpkg -i ../linux-image-5.11.0+_*.deb
+
+make -j$(nproc) headers_install INSTALL_HDR_PATH=/usr
