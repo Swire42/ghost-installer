@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# This script was created by Victor Miquel
-# Its purpose is to install a 5.11.0 based ghOSt kernel, on an Ubuntu 20.04 machine.
+# This script can be used to install a linux-5.11.0 based ghOSt kernel on an Ubuntu 20.04 machine.
 
 if [ $(id -u) -ne 0 ]
   then echo "Please run with sudo"
@@ -14,10 +13,8 @@ rm -rf build_kernel
 mkdir build_kernel
 cd build_kernel
 
-git clone https://github.com/google/ghost-kernel.git
-
-# Somehow without this the install seems to fail on a real machine...
-mv ghost-kernel linux-5.11.0_5.11.0
+# Somehow the directory name plays a crucial role later on.
+git clone --branch "ghost-v5.11" https://github.com/google/ghost-kernel.git linux-5.11.0_5.11.0
 
 cd linux-5.11.0_5.11.0
 
