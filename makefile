@@ -1,4 +1,4 @@
-base: kernel grubmenu bazel
+base: kernel grubmenu bazel pybind
 
 kernel: packages
 	sudo ./install-kernel.sh
@@ -12,4 +12,7 @@ grubmenu:
 bazel: packages
 	sudo ./install-bazel.sh
 
-.PHONY: base kernel packages grubmenu bazel
+pybind: packages
+	sudo pip3 install pybind11
+
+.PHONY: base kernel packages grubmenu bazel pybind
