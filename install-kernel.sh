@@ -14,7 +14,7 @@ mkdir build_kernel
 cd build_kernel
 
 # Somehow the directory name plays a crucial role later on.
-git clone --branch "ghost-v5.11" https://github.com/google/ghost-kernel.git linux-5.11.0_5.11.0
+git clone --branch "ghost-v5.11" --depth 1 https://github.com/google/ghost-kernel.git linux-5.11.0_5.11.0
 
 cd linux-5.11.0_5.11.0
 
