@@ -10,6 +10,6 @@ grubmenu:
 	sudo ./setup-grubmenu.sh
 
 bazel: packages
-	sudo ./instal-bazel.sh
+	sudo ./install-bazel.sh
 
 .PHONY: base kernel packages grubmenu bazel
