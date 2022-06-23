@@ -1,18 +1,24 @@
-base: kernel grubmenu bazel pybind
+base: kernel grubmenu bazel
+
+plus: pybind vim
 
 kernel: packages
-	sudo ./install-kernel.sh
+	./install-kernel.sh
 
 packages:
-	sudo ./install-packages.sh
+	./install-packages.sh
 
 grubmenu:
-	sudo ./setup-grubmenu.sh
+	./setup-grubmenu.sh
 
 bazel: packages
-	sudo ./install-bazel.sh
+	./install-bazel.sh
 
-pybind: packages
-	sudo pip3 install pybind11
+pybind:
+	apt install python3-pip
+	pip3 install pybind11
 
-.PHONY: base kernel packages grubmenu bazel pybind
+vim:
+	apt install vim
+
+.PHONY: base plus kernel packages grubmenu bazel pybind vim
